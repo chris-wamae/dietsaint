@@ -1,6 +1,6 @@
 using DietSaint.Models;
 
-namespace Models
+namespace DietSaint.Models
 {
 
 public class Food
