@@ -5,7 +5,7 @@ namespace DietSaint.Models
     public class Mineral
     {
 
-    public string Id { get; set; }
+    public int Id { get; set; }
 
     public string Magnesium { get; set; }
 
@@ -16,6 +16,8 @@ namespace DietSaint.Models
     public string Zinc {get ; set; }    
 
     public string Iron { get; set; }
+
+    public int FoodId { get; set; }
 
     public Food Food { get; set; }
 

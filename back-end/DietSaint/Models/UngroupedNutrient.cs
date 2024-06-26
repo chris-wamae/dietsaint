@@ -13,7 +13,8 @@ namespace DietSaint.Models
         
     public string Fiber { get; set; }
 
-        public Food Food { get; set; }
+    public int FoodId { get; set; }
+    public Food Food { get; set; }
 
     }
 }
