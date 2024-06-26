@@ -13,6 +13,11 @@ namespace DietSaint.Repositories
         _dataContext = dataContext;
     }
        
+    public bool FoodExists(int id)
+        {
+            return _dataContext.Foods.Any(f => f.Id == id);
+        }
+
     public List<Food> SearchFoodByName(string searchQuery)
         {
             return _dataContext.Foods.Where(f => f.Name.Substring(0,searchQuery.Length).ToLower() == searchQuery.ToLower()).ToList();
