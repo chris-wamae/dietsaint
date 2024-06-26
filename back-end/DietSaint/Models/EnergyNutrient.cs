@@ -15,9 +15,11 @@ namespace DietSaint.Models
 
      public string Sugars { get; set; }
         
-    public string Carbohydrates { get; set; }
+    public string Carbohydrate { get; set; }
 
-        public Food Food { get; set; }
+    public int FoodId { get; set; } 
+
+    public Food Food { get; set; }
 
     }
 }

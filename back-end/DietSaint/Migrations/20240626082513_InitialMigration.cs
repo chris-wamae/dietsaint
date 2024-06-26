@@ -34,7 +34,7 @@ namespace DietSaint.Migrations
                     Lactose = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Calories = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Sugars = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Carbohydrates = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Carbohydrate = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     FoodId = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
@@ -52,7 +52,8 @@ namespace DietSaint.Migrations
                 name: "Minerals",
                 columns: table => new
                 {
-                    Id = table.Column<string>(type: "nvarchar(450)", nullable: false),
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
                     Magnesium = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Calcium = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Potassium = table.Column<string>(type: "nvarchar(max)", nullable: false),
@@ -118,22 +119,26 @@ namespace DietSaint.Migrations
             migrationBuilder.CreateIndex(
                 name: "IX_EnergyNutrients_FoodId",
                 table: "EnergyNutrients",
-                column: "FoodId");
+                column: "FoodId",
+                unique: true);
 
             migrationBuilder.CreateIndex(
                 name: "IX_Minerals_FoodId",
                 table: "Minerals",
-                column: "FoodId");
+                column: "FoodId",
+                unique: true);
 
             migrationBuilder.CreateIndex(
                 name: "IX_UngroupedNutrients_FoodId",
                 table: "UngroupedNutrients",
-                column: "FoodId");
+                column: "FoodId",
+                unique: true);
 
             migrationBuilder.CreateIndex(
                 name: "IX_Vitamins_FoodId",
                 table: "Vitamins",
-                column: "FoodId");
+                column: "FoodId",
+                unique: true);
         }
 
         /// <inheritdoc />

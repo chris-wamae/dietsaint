@@ -17,7 +17,18 @@ namespace DietSaint.Data
     public DbSet<UngroupedNutrient> UngroupedNutrients { get; set;}
 
     public DbSet<Vitamin> Vitamins { get; set; }
-        
+
+        //protected override void OnModelCreating(ModelBuilder modelBuilder)
+        //{
+        //    base.OnModelCreating(modelBuilder);
+
+        //    //modelBuilder.Entity<Food>().HasMany(f => f.Vitamins);
+        //    //modelBuilder.Entity<Food>().HasMany(f => f.Minerals);
+        //    //modelBuilder.Entity<Food>().HasMany(f => f.EnergyNutrients);
+        //    //modelBuilder.Entity<Food>().HasMany(f => f.UngroupedNutrients);
+
+        //}
+
 
     }
 }

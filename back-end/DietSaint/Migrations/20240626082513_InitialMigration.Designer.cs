@@ -11,7 +11,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace DietSaint.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20240625074746_InitialMigration")]
+    [Migration("20240626082513_InitialMigration")]
     partial class InitialMigration
     {
         /// <inheritdoc />
@@ -36,7 +36,7 @@ namespace DietSaint.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Carbohydrates")
+                    b.Property<string>("Carbohydrate")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
@@ -57,15 +57,19 @@ namespace DietSaint.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("FoodId");
+                    b.HasIndex("FoodId")
+                        .IsUnique();
 
                     b.ToTable("EnergyNutrients");
                 });
 
             modelBuilder.Entity("DietSaint.Models.Mineral", b =>
                 {
-                    b.Property<string>("Id")
-                        .HasColumnType("nvarchar(450)");
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<string>("Calcium")
                         .IsRequired()
@@ -92,7 +96,8 @@ namespace DietSaint.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("FoodId");
+                    b.HasIndex("FoodId")
+                        .IsUnique();
 
                     b.ToTable("Minerals");
                 });
@@ -122,7 +127,8 @@ namespace DietSaint.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("FoodId");
+                    b.HasIndex("FoodId")
+                        .IsUnique();
 
                     b.ToTable("UngroupedNutrients");
                 });
@@ -152,7 +158,8 @@ namespace DietSaint.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("FoodId");
+                    b.HasIndex("FoodId")
+                        .IsUnique();
 
                     b.ToTable("Vitamins");
                 });
@@ -181,8 +188,8 @@ namespace DietSaint.Migrations
             modelBuilder.Entity("DietSaint.Models.EnergyNutrient", b =>
                 {
                     b.HasOne("Models.Food", "Food")
-                        .WithMany()
-                        .HasForeignKey("FoodId")
+                        .WithOne("EnergyNutrient")
+                        .HasForeignKey("DietSaint.Models.EnergyNutrient", "FoodId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
@@ -192,8 +199,8 @@ namespace DietSaint.Migrations
             modelBuilder.Entity("DietSaint.Models.Mineral", b =>
                 {
                     b.HasOne("Models.Food", "Food")
-                        .WithMany()
-                        .HasForeignKey("FoodId")
+                        .WithOne("Mineral")
+                        .HasForeignKey("DietSaint.Models.Mineral", "FoodId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
@@ -203,8 +210,8 @@ namespace DietSaint.Migrations
             modelBuilder.Entity("DietSaint.Models.UngroupedNutrient", b =>
                 {
                     b.HasOne("Models.Food", "Food")
-                        .WithMany()
-                        .HasForeignKey("FoodId")
+                        .WithOne("UngroupedNutrient")
+                        .HasForeignKey("DietSaint.Models.UngroupedNutrient", "FoodId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
@@ -214,12 +221,27 @@ namespace DietSaint.Migrations
             modelBuilder.Entity("DietSaint.Models.Vitamin", b =>
                 {
                     b.HasOne("Models.Food", "Food")
-                        .WithMany()
-                        .HasForeignKey("FoodId")
+                        .WithOne("Vitamin")
+                        .HasForeignKey("DietSaint.Models.Vitamin", "FoodId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.Navigation("Food");
+                });
+
+            modelBuilder.Entity("Models.Food", b =>
+                {
+                    b.Navigation("EnergyNutrient")
+                        .IsRequired();
+
+                    b.Navigation("Mineral")
+                        .IsRequired();
+
+                    b.Navigation("UngroupedNutrient")
+                        .IsRequired();
+
+                    b.Navigation("Vitamin")
+                        .IsRequired();
                 });
 #pragma warning restore 612, 618
         }

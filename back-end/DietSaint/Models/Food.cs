@@ -11,13 +11,13 @@ public class Food
 
         public string Description { get; set; }
 
-        public IEnumerable<Mineral> Minerals;
+        public Mineral Mineral { get; set;}
 
-        public IEnumerable<Vitamin> Vitamins;
+        public Vitamin Vitamin {get; set;}    
 
-        public IEnumerable<EnergyNutrient> EnergyNutrients;
+        public EnergyNutrient EnergyNutrient { get; set;} 
 
-        public IEnumerable<UngroupedNutrient> UngroupedNutrients;
+        public UngroupedNutrient UngroupedNutrient { get; set;}
 
 
     }
