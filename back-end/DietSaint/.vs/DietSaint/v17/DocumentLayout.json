@@ -3,12 +3,52 @@
   "WorkspaceRootPath": "C:\\Users\\chris\\development\\dietsaint\\back-end\\DietSaint\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{600C4BDE-2295-489B-8982-A2D0F9FBB83E}|DietSaint.csproj|c:\\users\\chris\\development\\dietsaint\\back-end\\dietsaint\\seed.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{600C4BDE-2295-489B-8982-A2D0F9FBB83E}|DietSaint.csproj|solutionrelative:seed.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{600C4BDE-2295-489B-8982-A2D0F9FBB83E}|DietSaint.csproj|c:\\users\\chris\\development\\dietsaint\\back-end\\dietsaint\\controllers\\energynutrientcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{600C4BDE-2295-489B-8982-A2D0F9FBB83E}|DietSaint.csproj|solutionrelative:controllers\\energynutrientcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{600C4BDE-2295-489B-8982-A2D0F9FBB83E}|DietSaint.csproj|c:\\users\\chris\\development\\dietsaint\\back-end\\dietsaint\\repositories\\energynutrientrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{600C4BDE-2295-489B-8982-A2D0F9FBB83E}|DietSaint.csproj|solutionrelative:repositories\\energynutrientrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{600C4BDE-2295-489B-8982-A2D0F9FBB83E}|DietSaint.csproj|c:\\users\\chris\\development\\dietsaint\\back-end\\dietsaint\\controllers\\foodcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{600C4BDE-2295-489B-8982-A2D0F9FBB83E}|DietSaint.csproj|solutionrelative:controllers\\foodcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{600C4BDE-2295-489B-8982-A2D0F9FBB83E}|DietSaint.csproj|c:\\users\\chris\\development\\dietsaint\\back-end\\dietsaint\\repositories\\foodrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{600C4BDE-2295-489B-8982-A2D0F9FBB83E}|DietSaint.csproj|solutionrelative:repositories\\foodrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{600C4BDE-2295-489B-8982-A2D0F9FBB83E}|DietSaint.csproj|c:\\users\\chris\\development\\dietsaint\\back-end\\dietsaint\\interfaces\\ifoodrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{600C4BDE-2295-489B-8982-A2D0F9FBB83E}|DietSaint.csproj|solutionrelative:interfaces\\ifoodrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{600C4BDE-2295-489B-8982-A2D0F9FBB83E}|DietSaint.csproj|c:\\users\\chris\\development\\dietsaint\\back-end\\dietsaint\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{600C4BDE-2295-489B-8982-A2D0F9FBB83E}|DietSaint.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{600C4BDE-2295-489B-8982-A2D0F9FBB83E}|DietSaint.csproj|c:\\users\\chris\\development\\dietsaint\\back-end\\dietsaint\\interfaces\\ienergynutrientrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{600C4BDE-2295-489B-8982-A2D0F9FBB83E}|DietSaint.csproj|solutionrelative:interfaces\\ienergynutrientrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{600C4BDE-2295-489B-8982-A2D0F9FBB83E}|DietSaint.csproj|c:\\users\\chris\\development\\dietsaint\\back-end\\dietsaint\\models\\energynutrient.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{600C4BDE-2295-489B-8982-A2D0F9FBB83E}|DietSaint.csproj|solutionrelative:models\\energynutrient.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{600C4BDE-2295-489B-8982-A2D0F9FBB83E}|DietSaint.csproj|c:\\users\\chris\\development\\dietsaint\\back-end\\dietsaint\\seed.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{600C4BDE-2295-489B-8982-A2D0F9FBB83E}|DietSaint.csproj|solutionrelative:seed.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{600C4BDE-2295-489B-8982-A2D0F9FBB83E}|DietSaint.csproj|c:\\users\\chris\\development\\dietsaint\\back-end\\dietsaint\\data\\datacontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{600C4BDE-2295-489B-8982-A2D0F9FBB83E}|DietSaint.csproj|solutionrelative:data\\datacontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{600C4BDE-2295-489B-8982-A2D0F9FBB83E}|DietSaint.csproj|c:\\users\\chris\\development\\dietsaint\\back-end\\dietsaint\\models\\food.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{600C4BDE-2295-489B-8982-A2D0F9FBB83E}|DietSaint.csproj|solutionrelative:models\\food.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{600C4BDE-2295-489B-8982-A2D0F9FBB83E}|DietSaint.csproj|c:\\users\\chris\\development\\dietsaint\\back-end\\dietsaint\\models\\mineral.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{600C4BDE-2295-489B-8982-A2D0F9FBB83E}|DietSaint.csproj|solutionrelative:models\\mineral.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{600C4BDE-2295-489B-8982-A2D0F9FBB83E}|DietSaint.csproj|c:\\users\\chris\\development\\dietsaint\\back-end\\dietsaint\\models\\ungroupednutrient.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -19,20 +59,8 @@
       "RelativeMoniker": "D:0:0:{600C4BDE-2295-489B-8982-A2D0F9FBB83E}|DietSaint.csproj|solutionrelative:models\\vitamin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{600C4BDE-2295-489B-8982-A2D0F9FBB83E}|DietSaint.csproj|c:\\users\\chris\\development\\dietsaint\\back-end\\dietsaint\\models\\mineral.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{600C4BDE-2295-489B-8982-A2D0F9FBB83E}|DietSaint.csproj|solutionrelative:models\\mineral.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{600C4BDE-2295-489B-8982-A2D0F9FBB83E}|DietSaint.csproj|c:\\users\\chris\\development\\dietsaint\\back-end\\dietsaint\\models\\food.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{600C4BDE-2295-489B-8982-A2D0F9FBB83E}|DietSaint.csproj|solutionrelative:models\\food.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{600C4BDE-2295-489B-8982-A2D0F9FBB83E}|DietSaint.csproj|c:\\users\\chris\\development\\dietsaint\\back-end\\dietsaint\\data\\fooddescriptionsandnutrients.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
       "RelativeMoniker": "D:0:0:{600C4BDE-2295-489B-8982-A2D0F9FBB83E}|DietSaint.csproj|solutionrelative:data\\fooddescriptionsandnutrients.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{600C4BDE-2295-489B-8982-A2D0F9FBB83E}|DietSaint.csproj|c:\\users\\chris\\development\\dietsaint\\back-end\\dietsaint\\data\\datacontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{600C4BDE-2295-489B-8982-A2D0F9FBB83E}|DietSaint.csproj|solutionrelative:data\\datacontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -42,7 +70,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 5,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Bookmark",
@@ -50,43 +78,164 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "EnergyNutrientController.cs",
+              "DocumentMoniker": "C:\\Users\\chris\\development\\dietsaint\\back-end\\DietSaint\\Controllers\\EnergyNutrientController.cs",
+              "RelativeDocumentMoniker": "Controllers\\EnergyNutrientController.cs",
+              "ToolTip": "C:\\Users\\chris\\development\\dietsaint\\back-end\\DietSaint\\Controllers\\EnergyNutrientController.cs",
+              "RelativeToolTip": "Controllers\\EnergyNutrientController.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABUAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-26T09:49:22.908Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "EnergyNutrientRepository.cs",
+              "DocumentMoniker": "C:\\Users\\chris\\development\\dietsaint\\back-end\\DietSaint\\Repositories\\EnergyNutrientRepository.cs",
+              "RelativeDocumentMoniker": "Repositories\\EnergyNutrientRepository.cs",
+              "ToolTip": "C:\\Users\\chris\\development\\dietsaint\\back-end\\DietSaint\\Repositories\\EnergyNutrientRepository.cs",
+              "RelativeToolTip": "Repositories\\EnergyNutrientRepository.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABQAAAAMAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-26T09:43:55.934Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "IEnergyNutrientRepository.cs",
+              "DocumentMoniker": "C:\\Users\\chris\\development\\dietsaint\\back-end\\DietSaint\\Interfaces\\IEnergyNutrientRepository.cs",
+              "RelativeDocumentMoniker": "Interfaces\\IEnergyNutrientRepository.cs",
+              "ToolTip": "C:\\Users\\chris\\development\\dietsaint\\back-end\\DietSaint\\Interfaces\\IEnergyNutrientRepository.cs",
+              "RelativeToolTip": "Interfaces\\IEnergyNutrientRepository.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-26T09:40:56.997Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\chris\\development\\dietsaint\\back-end\\DietSaint\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "C:\\Users\\chris\\development\\dietsaint\\back-end\\DietSaint\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-26T08:38:00.233Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "FoodController.cs",
+              "DocumentMoniker": "C:\\Users\\chris\\development\\dietsaint\\back-end\\DietSaint\\Controllers\\FoodController.cs",
+              "RelativeDocumentMoniker": "Controllers\\FoodController.cs",
+              "ToolTip": "C:\\Users\\chris\\development\\dietsaint\\back-end\\DietSaint\\Controllers\\FoodController.cs",
+              "RelativeToolTip": "Controllers\\FoodController.cs",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAAABgAAAA4AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-26T08:52:23.024Z"
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 3,
+              "Title": "FoodRepository.cs",
+              "DocumentMoniker": "C:\\Users\\chris\\development\\dietsaint\\back-end\\DietSaint\\Repositories\\FoodRepository.cs",
+              "RelativeDocumentMoniker": "Repositories\\FoodRepository.cs",
+              "ToolTip": "C:\\Users\\chris\\development\\dietsaint\\back-end\\DietSaint\\Repositories\\FoodRepository.cs",
+              "RelativeToolTip": "Repositories\\FoodRepository.cs",
+              "ViewState": "AQIAAAoAAAAAAAAAAAA1wBMAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-26T08:45:16.686Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "IFoodRepository.cs",
+              "DocumentMoniker": "C:\\Users\\chris\\development\\dietsaint\\back-end\\DietSaint\\Interfaces\\IFoodRepository.cs",
+              "RelativeDocumentMoniker": "Interfaces\\IFoodRepository.cs",
+              "ToolTip": "C:\\Users\\chris\\development\\dietsaint\\back-end\\DietSaint\\Interfaces\\IFoodRepository.cs",
+              "RelativeToolTip": "Interfaces\\IFoodRepository.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAAgAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-26T08:33:42.374Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
               "Title": "Vitamin.cs",
               "DocumentMoniker": "C:\\Users\\chris\\development\\dietsaint\\back-end\\DietSaint\\Models\\Vitamin.cs",
               "RelativeDocumentMoniker": "Models\\Vitamin.cs",
               "ToolTip": "C:\\Users\\chris\\development\\dietsaint\\back-end\\DietSaint\\Models\\Vitamin.cs",
               "RelativeToolTip": "Models\\Vitamin.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAAIAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAQAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-06-25T09:59:16.769Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 12,
               "Title": "UngroupedNutrient.cs",
               "DocumentMoniker": "C:\\Users\\chris\\development\\dietsaint\\back-end\\DietSaint\\Models\\UngroupedNutrient.cs",
               "RelativeDocumentMoniker": "Models\\UngroupedNutrient.cs",
               "ToolTip": "C:\\Users\\chris\\development\\dietsaint\\back-end\\DietSaint\\Models\\UngroupedNutrient.cs",
               "RelativeToolTip": "Models\\UngroupedNutrient.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAAAEAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAQAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-06-25T09:59:13.486Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 7,
               "Title": "EnergyNutrient.cs",
               "DocumentMoniker": "C:\\Users\\chris\\development\\dietsaint\\back-end\\DietSaint\\Models\\EnergyNutrient.cs",
               "RelativeDocumentMoniker": "Models\\EnergyNutrient.cs",
               "ToolTip": "C:\\Users\\chris\\development\\dietsaint\\back-end\\DietSaint\\Models\\EnergyNutrient.cs",
               "RelativeToolTip": "Models\\EnergyNutrient.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABgAAAABAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAQAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-06-25T09:58:56.328Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 8,
+              "Title": "Seed.cs",
+              "DocumentMoniker": "C:\\Users\\chris\\development\\dietsaint\\back-end\\DietSaint\\Seed.cs",
+              "RelativeDocumentMoniker": "Seed.cs",
+              "ToolTip": "C:\\Users\\chris\\development\\dietsaint\\back-end\\DietSaint\\Seed.cs",
+              "RelativeToolTip": "Seed.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAEAAAAVAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-25T09:41:16.458Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "Mineral.cs",
+              "DocumentMoniker": "C:\\Users\\chris\\development\\dietsaint\\back-end\\DietSaint\\Models\\Mineral.cs",
+              "RelativeDocumentMoniker": "Models\\Mineral.cs",
+              "ToolTip": "C:\\Users\\chris\\development\\dietsaint\\back-end\\DietSaint\\Models\\Mineral.cs",
+              "RelativeToolTip": "Models\\Mineral.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAQAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-25T09:34:55.452Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "DataContext.cs",
+              "DocumentMoniker": "C:\\Users\\chris\\development\\dietsaint\\back-end\\DietSaint\\Data\\DataContext.cs",
+              "RelativeDocumentMoniker": "Data\\DataContext.cs",
+              "ToolTip": "C:\\Users\\chris\\development\\dietsaint\\back-end\\DietSaint\\Data\\DataContext.cs",
+              "RelativeToolTip": "Data\\DataContext.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAEAAAAkAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-25T09:32:48.454Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
               "Title": "foodDescriptionsAndNutrients.json",
               "DocumentMoniker": "C:\\Users\\chris\\development\\dietsaint\\back-end\\DietSaint\\Data\\foodDescriptionsAndNutrients.json",
               "RelativeDocumentMoniker": "Data\\foodDescriptionsAndNutrients.json",
@@ -98,52 +247,15 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Seed.cs",
-              "DocumentMoniker": "C:\\Users\\chris\\development\\dietsaint\\back-end\\DietSaint\\Seed.cs",
-              "RelativeDocumentMoniker": "Seed.cs",
-              "ToolTip": "C:\\Users\\chris\\development\\dietsaint\\back-end\\DietSaint\\Seed.cs",
-              "RelativeToolTip": "Seed.cs",
-              "ViewState": "AQIAAA4AAAAAAAAAAAAQwB0AAAAkAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-25T09:41:16.458Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "Mineral.cs",
-              "DocumentMoniker": "C:\\Users\\chris\\development\\dietsaint\\back-end\\DietSaint\\Models\\Mineral.cs",
-              "RelativeDocumentMoniker": "Models\\Mineral.cs",
-              "ToolTip": "C:\\Users\\chris\\development\\dietsaint\\back-end\\DietSaint\\Models\\Mineral.cs",
-              "RelativeToolTip": "Models\\Mineral.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABMAAAAEAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-25T09:34:55.452Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 10,
               "Title": "Food.cs",
               "DocumentMoniker": "C:\\Users\\chris\\development\\dietsaint\\back-end\\DietSaint\\Models\\Food.cs",
               "RelativeDocumentMoniker": "Models\\Food.cs",
               "ToolTip": "C:\\Users\\chris\\development\\dietsaint\\back-end\\DietSaint\\Models\\Food.cs",
               "RelativeToolTip": "Models\\Food.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABMAAAAyAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAIAAAAKAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-06-25T09:33:12.756Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "DataContext.cs",
-              "DocumentMoniker": "C:\\Users\\chris\\development\\dietsaint\\back-end\\DietSaint\\Data\\DataContext.cs",
-              "RelativeDocumentMoniker": "Data\\DataContext.cs",
-              "ToolTip": "C:\\Users\\chris\\development\\dietsaint\\back-end\\DietSaint\\Data\\DataContext.cs",
-              "RelativeToolTip": "Data\\DataContext.cs",
-              "ViewState": "AQIAAAMAAAAAAAAAAAAAAAgAAABPAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-25T09:32:48.454Z"
             }
           ]
         }

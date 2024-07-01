@@ -1,4 +1,4 @@
-﻿using Models;
+﻿using DietSaint.Models;
 
 namespace DietSaint.Models
 {

@@ -1,12 +1,19 @@
 using DietSaint;
 using DietSaint.Data;
+using DietSaint.Interfaces;
+using DietSaint.Repositories;
 using Microsoft.EntityFrameworkCore;
+using System.Text.Json.Serialization;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 
-builder.Services.AddControllers();
+builder.Services.AddControllers().AddJsonOptions(
+    x => x.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.IgnoreCycles);
+
+builder.Services.AddScoped<IFoodRepository, FoodRepository>();
+builder.Services.AddScoped<IEnergyNutrientRepository, EnergyNutrientRepository>();
 
 builder.Services.AddDbContext<DataContext>(options =>
 {

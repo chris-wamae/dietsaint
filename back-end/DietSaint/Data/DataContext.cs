@@ -1,6 +1,5 @@
 ﻿using DietSaint.Models;
 using Microsoft.EntityFrameworkCore;
-using Models;
 
 namespace DietSaint.Data
 {

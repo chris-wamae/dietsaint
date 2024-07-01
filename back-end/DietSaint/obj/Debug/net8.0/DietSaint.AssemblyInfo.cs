@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("DietSaint")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c09fb7c764ac8fd3b487e3b9cbb22ab3fa64b186")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ebc1493c6c11cd804697419b3a115e5c43e7babd")]
 [assembly: System.Reflection.AssemblyProductAttribute("DietSaint")]
 [assembly: System.Reflection.AssemblyTitleAttribute("DietSaint")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
