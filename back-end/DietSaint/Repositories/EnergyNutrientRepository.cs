@@ -17,7 +17,8 @@ namespace DietSaint.Repositories
         public EnergyNutrient GetFoodEnergyNutrientByFoodId(int id) 
         {
           
-        return _dataContext.EnergyNutrients.Where(en => en.FoodId == id).FirstOrDefault();
+      
+            return _dataContext.EnergyNutrients.Where(en => en.FoodId == id).FirstOrDefault();
            
         }
 
