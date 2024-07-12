@@ -6,8 +6,6 @@ const pacifico = Pacifico({weight:"400",subsets: ["latin"], display:"swap"});
 
 export default function NavBar({leftNavLinks,rightNavLinks} : {leftNavLinks: string[], rightNavLinks: string[]}) {
 
-
-
    return <div className={styles.navbar}>
     <div className={styles.nav_container}>
         <div className={styles.links_div}>
