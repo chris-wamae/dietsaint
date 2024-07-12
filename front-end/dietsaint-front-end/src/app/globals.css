@@ -1,6 +1,7 @@
 :root
 {
 --alloyOrange:#BF5D03;
+--limeGreen:#10C400;
 }
 
 body
@@ -17,6 +18,21 @@ div
 {
 margin:0px;
 padding:10px;
+}
+
+.large_font
+{
+font-size:48px;
+}
+
+.medium_font
+{
+font-size:36px;
+}
+
+.normal_text
+{
+font-size:24px;
 }
 
 
