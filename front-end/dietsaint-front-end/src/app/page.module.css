@@ -28,3 +28,26 @@ border-radius:5px;
 {
 text-align:center;
 }
+
+.current_ingredients_card
+{
+text-align:center;
+}
+
+.add_ingredient_card
+{
+text-align:center;
+}
+
+.search_form
+{
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+}
+
+.search_form input
+{
+
+}
