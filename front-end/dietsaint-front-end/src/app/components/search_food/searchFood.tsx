@@ -14,6 +14,9 @@ Search Ingredient
             e.preventDefault()
             }}>Search</button>
           </form>
+          <div className={styles.found_ingredients_cont}>
+            
+          </div>
           </div>
         
 </>
