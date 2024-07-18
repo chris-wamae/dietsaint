@@ -1,9 +1,8 @@
 "use client";
 
 import styles from "./page.module.css";
-import { getEnergyNutrientById } from "./api/route";
 import { useEffect, useState } from "react";
-import { EnergyNutrient} from "./interfaces/ienergynutrient";
+import { Nutrient} from "./interfaces/inutrient";
 import { Food } from "./interfaces/ifood";
 import NutrientTotal from "./components/nutrient_total/nutrientTotal";
 import SearchFood from "./components/search_food/searchFood";
@@ -11,20 +10,15 @@ import CurrentIngredient from "./components/current_ingredient/currentIngredient
 
 export default function Home() {
 
-  const [fetchNutrientId, setFetchNutrientId] = useState<number | null>(null)
-  const [currentNutrients, setCurrentNutrients] = useState<EnergyNutrient[]>([])
   const [currentFoods, setCurrentFoods] = useState<Food[]>([])
-  const [food,setFood] = useState<Food | null>(null)
-  const fetchNutrient = async (id: number | null) => {
-    const foundNutrient: EnergyNutrient = await getEnergyNutrientById(id)
-    setCurrentNutrients([...currentNutrients, foundNutrient])
-  }
+  const [nutrientType, setNutrientType] = useState<string>("Calories")
+  const [currentTotal,setCurrentTotal] = useState<number>(0)
+  const [newFoodId, setNewFoodId] = useState<number | null>(null)
 
-  useEffect(() => {
-    if (fetchNutrientId !== null) {
-      fetchNutrient(fetchNutrientId);
-    }
-  }, [fetchNutrientId])
+  const addFood = (food : Food) => {
+   setCurrentFoods([...currentFoods, food])
+   setNewFoodId(food.id)
+  }
 
 
   return (
@@ -32,13 +26,13 @@ export default function Home() {
       <div className={styles.ad_space}></div>
       <div className={styles.page_content}>
         <div className={styles.card}>
-            <NutrientTotal/>
+            <NutrientTotal currentTotal={currentTotal} setNutrientType={setNutrientType} nutrientType={nutrientType}/>
         </div>
         <div className={styles.card}>
-            <CurrentIngredient currentNutrients={[]}/>
+            <CurrentIngredient nutrientType={nutrientType} currentFoods={currentFoods}  newFoodId={newFoodId}/>
         </div>
         <div className={styles.card}>
-            <SearchFood setFood={setFood}/>
+            <SearchFood addFood={addFood}/>
         </div>
       </div>
       <div className={styles.ad_space}></div>

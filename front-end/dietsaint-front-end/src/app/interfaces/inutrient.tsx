@@ -1,0 +1,21 @@
+export interface Nutrient {
+id: number,
+starch: string | null,
+lactose: string | null,
+calories: string | null,
+sugars: string | null,
+carbohydrate:string | null,
+magnesium:string | null,
+calcium:string | null,
+potassium:string | null,
+zinc:string | null,
+iron:string | null,
+protein:string | null,
+water:string | null,
+fiber:string | null,
+vitaminB6:string | null,
+vitaminC:string | null,
+vitaminA:string | null
+foodId: number | null,
+food: null | null,
+}
