@@ -15,6 +15,8 @@ builder.Services.AddControllers().AddJsonOptions(
 builder.Services.AddScoped<IFoodRepository, FoodRepository>();
 builder.Services.AddScoped<IEnergyNutrientRepository, EnergyNutrientRepository>();
 
+builder.Services.AddCors();
+
 builder.Services.AddDbContext<DataContext>(options =>
 {
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"));
@@ -41,6 +43,10 @@ void SeedData(IHost app)
 // Configure the HTTP request pipeline.
 
 app.UseHttpsRedirection();
+
+app.UseCors(options =>
+    options.WithOrigins("*").AllowAnyHeader().AllowAnyMethod());
+
 
 app.UseAuthorization();
 

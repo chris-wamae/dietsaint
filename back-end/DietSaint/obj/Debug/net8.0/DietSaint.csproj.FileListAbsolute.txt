@@ -131,3 +131,4 @@ C:\Users\chris\development\dietsaint\back-end\DietSaint\bin\Debug\net8.0\runtime
 C:\Users\chris\development\dietsaint\back-end\DietSaint\bin\Debug\net8.0\runtimes\win\lib\net6.0\System.Security.Cryptography.ProtectedData.dll
 C:\Users\chris\development\dietsaint\back-end\DietSaint\bin\Debug\net8.0\runtimes\win\lib\net6.0\System.Windows.Extensions.dll
 C:\Users\chris\development\dietsaint\back-end\DietSaint\obj\Debug\net8.0\DietSaint.sourcelink.json
+C:\Users\chris\development\dietsaint\back-end\DietSaint\bin\Debug\net8.0\System.Web.Cors.dll
