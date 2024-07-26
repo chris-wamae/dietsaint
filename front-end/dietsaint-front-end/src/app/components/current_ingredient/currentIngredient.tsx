@@ -2,7 +2,7 @@ import styles from "../../page.module.css"
 import { Food } from "@/app/interfaces/ifood"
 import { Nutrient } from "@/app/interfaces/inutrient"
 import { FoodAndNutrient } from "@/app/interfaces/ifoodandnutrient"
-import { getNutrientByFoodId } from "@/app/api/route"
+import { getEnergyNutrientByFoodId, getMineralByFoodId, getUngroupedNutrientByFoodId, getVitaminByFoodId } from "@/app/api/route"
 import { useState } from "react"
 import { useEffect } from "react"
 
@@ -22,15 +22,42 @@ export default function CurrentIngredient({ currentFoods, nutrientType, newFoodI
   const [currentNutrients, setCurrentNutrients] = useState<Nutrient[]>([])
   const [foodAndNutrients, setFoodAndNutrients] = useState<FoodAndNutrient[]>([])
 
-  const createFoodAndNutrient = (food: Food, nutrient: Nutrient, nutrientType: string) => {
+  const updateFoodAndNutrient = (foodAndNutrient: FoodAndNutrient, nutrientType: string) => {
 
-    let foodAndNutrient: FoodAndNutrient = {
-      name: "",
-      nutrient: ""
+    const nutrient: Nutrient = currentNutrients.filter(x => x.foodId == foodAndNutrient.foodId)[0]
+
+    foodAndNutrientSetNutrient(nutrientType, foodAndNutrient, nutrient)
+
+    if (foodAndNutrient.nutrient == null) {
+
     }
 
-    foodAndNutrient.name = food.name;
+  }
 
+  const typeBasedNutrientFetch = async (nutrientType: string, foodId: number | null) => {
+    if(foodId == null)
+    {
+     return null
+    }
+    else if (nutrientType == "Calories" || nutrientType == "Starch" || nutrientType == "Lactose" || nutrientType == "Sugars" || nutrientType == "Carbohydrate") {
+      return await getEnergyNutrientByFoodId(foodId)
+    }
+    else if (nutrientType == "Magnesium" || nutrientType == "Calcium" || nutrientType == "Potassium" || nutrientType == "Zinc" || nutrientType == "Iron") {
+      return await getMineralByFoodId(foodId)
+    }
+    else if (nutrientType == "Protein" || nutrientType == "Water" || nutrientType == "Fiber") {
+      return await getUngroupedNutrientByFoodId(foodId)
+    }
+    else if (nutrientType == "VitaminB6" || nutrientType == "VitaminC" || nutrientType == "VitaminA") {
+      return await getVitaminByFoodId(foodId)
+    }
+    else {
+      return null;
+    }
+
+  }
+
+  const foodAndNutrientSetNutrient = (nutrientType: string, foodAndNutrient: FoodAndNutrient, nutrient: Nutrient) => {
     switch (nutrientType) {
       case "Calories": foodAndNutrient.nutrient = nutrient.calories
         break;
@@ -67,6 +94,17 @@ export default function CurrentIngredient({ currentFoods, nutrientType, newFoodI
       default: foodAndNutrient.nutrient = null
         break;
     }
+  }
+
+  const createFoodAndNutrient = (food: Food, nutrient: Nutrient, nutrientType: string) => {
+
+    let foodAndNutrient: FoodAndNutrient = {
+      foodId: food.id,
+      name: food.name,
+      nutrient: ""
+    }
+
+    foodAndNutrientSetNutrient(nutrientType, foodAndNutrient, nutrient)
 
     setFoodAndNutrients([...foodAndNutrients, foodAndNutrient])
 
@@ -75,13 +113,16 @@ export default function CurrentIngredient({ currentFoods, nutrientType, newFoodI
 
   useEffect(() => {
     if (currentFoods.length > 0) {
-      const fetchNutrient = async (id: number | null) => {
+      const fetchNutrient = async (id: number | null, nutrientType : string) => {
 
-        const foundNutrient: Nutrient = await getNutrientByFoodId(id)
-        setCurrentNutrients([...currentNutrients, foundNutrient])
+        const foundNutrient: Nutrient | null = await typeBasedNutrientFetch(nutrientType,id)
 
+        if(foundNutrient !== null)
+        {
+          setCurrentNutrients([...currentNutrients, foundNutrient])
+        }
       }
-      fetchNutrient(newFoodId)
+      fetchNutrient(newFoodId,nutrientType)
     }
 
   }, [currentFoods])
