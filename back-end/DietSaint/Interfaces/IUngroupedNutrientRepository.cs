@@ -4,6 +4,6 @@ namespace DietSaint.Interfaces
 {
     public interface IUngroupedNutrientRepository
     {
-        UngroupedNutrient GetUngroupedNutrientByFoodId(int foodId);
+        public UngroupedNutrient GetUngroupedNutrientByFoodId(int foodId);
     }
 }

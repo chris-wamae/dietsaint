@@ -4,6 +4,6 @@ namespace DietSaint.Interfaces
 {
     public interface IVitaminRepository
     {
-        Vitamin GetVitaminByFoodId(int foodId);
+        public Vitamin GetVitaminByFoodId(int foodId);
     }
 }

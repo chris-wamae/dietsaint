@@ -4,7 +4,7 @@ namespace DietSaint.Interfaces
 {
     public interface IMineralRepository
     {
-        Mineral GetMineralByFoodId(int foodId);
+        public Mineral GetMineralByFoodId(int foodId);
 
     }
 }

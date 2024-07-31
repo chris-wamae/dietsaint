@@ -8,7 +8,7 @@ namespace DietSaint.Repositories
     {
         DataContext _dataContext;
 
-        UngroupedNutrientRepository(DataContext dataContext) 
+        public UngroupedNutrientRepository(DataContext dataContext) 
         {
         _dataContext = dataContext;
         }

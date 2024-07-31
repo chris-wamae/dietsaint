@@ -14,6 +14,9 @@ builder.Services.AddControllers().AddJsonOptions(
 
 builder.Services.AddScoped<IFoodRepository, FoodRepository>();
 builder.Services.AddScoped<IEnergyNutrientRepository, EnergyNutrientRepository>();
+builder.Services.AddScoped<IUngroupedNutrientRepository, UngroupedNutrientRepository>();
+builder.Services.AddScoped<IVitaminRepository, VitaminRepository>();
+builder.Services.AddScoped<IMineralRepository, MineralRepository>();
 
 builder.Services.AddCors();
 
