@@ -20,24 +20,180 @@ import { useEffect } from "react"
 export default function CurrentIngredient({ currentFoods, nutrientType, newFoodId }: { currentFoods: Food[], nutrientType: string, newFoodId: number | null }) {
 
   const [currentNutrients, setCurrentNutrients] = useState<Nutrient[]>([])
+
   const [foodAndNutrients, setFoodAndNutrients] = useState<FoodAndNutrient[]>([])
 
+
+  console.log(currentNutrients)
+
+  //errors
+
+  //changing the nutrient type only causes data for the last nutrient to be shown in the current ingredients list
+  //changing the nutrient causes a food(s?) to be added to the current ingredients list without clicking on it
+  
+  //these errors are related as instead of an update to the current foods a new one is added with the new nutrient type
+
+  //error is in foodAndNutrients update  and not nutrients update as the nutrient correctly has one item with all the details
+
+  //tracking changes to determine if fetch requests are needed
+
+  //if the nutrient type is changed to a different group, the new group data should be fetched
+  //and appended to the existing data of other nutrient groups for that food
+
+  //if the nutrient type is returned to a group that had been already fetched and no new foods have
+  //been added, no new fetch requests should occurr
+
+  //if a new foods are added and the nutrient group is then changed back to what it previosly was
+  //only the new foods should have their nutrient data fetched for that group since it already exists for 
+  //the others  
+  const addEnergyNutrientGroup = async (e: Nutrient) => {
+    if (e.calories == null) {
+      let newNutrient = await getEnergyNutrientByFoodId(e.foodId)
+      let oldNutrient = e;
+      oldNutrient.calories = newNutrient.calories
+      oldNutrient.carbohydrate = newNutrient.carbohydrate
+      oldNutrient.lactose = newNutrient.lactose
+      oldNutrient.sugars = newNutrient.sugars
+      let allNutrients = [...currentNutrients]
+      allNutrients.map(e => {
+        if (e.foodId == oldNutrient.foodId) {
+          e = oldNutrient
+        }
+        setCurrentNutrients(allNutrients)
+      })
+    }
+  }
+
+  const addVitaminGroup = async (e: Nutrient) => {
+    if (e.vitaminC == null) {
+      let newNutrient = await getVitaminByFoodId(e.foodId)
+      let oldNutrient = e;
+      oldNutrient.vitaminA = newNutrient.vitaminA
+      oldNutrient.vitaminB6 = newNutrient.vitaminB6
+      oldNutrient.vitaminC = newNutrient.vitaminC
+      let allNutrients = [...currentNutrients]
+      allNutrients.map(e => {
+        if (e.foodId == oldNutrient.foodId) {
+          e = oldNutrient
+        }
+        setCurrentNutrients(allNutrients)
+      })
+    }
+  }
+
+
+  const addMineralGroup = async (e: Nutrient) => {
+    if (e.magnesium == null) {
+      let newNutrient = await getMineralByFoodId(e.foodId)
+      let oldNutrient = e;
+      oldNutrient.magnesium = newNutrient.magnesium
+      oldNutrient.calcium = newNutrient.calcium
+      oldNutrient.potassium = newNutrient.potassium
+      oldNutrient.iron = newNutrient.iron
+      oldNutrient.zinc = oldNutrient.zinc
+      let allNutrients = [...currentNutrients]
+      allNutrients.map(e => {
+        if (e.foodId == oldNutrient.foodId) {
+          e = oldNutrient
+        }
+        setCurrentNutrients(allNutrients)
+      })
+    }
+  }
+
+
+  const addUngroupedNutrientGroup = async (e: Nutrient) => {
+    if (e.protein == null) {
+      let newNutrient = await getUngroupedNutrientByFoodId(e.foodId)
+      let oldNutrient = e;
+      oldNutrient.protein = newNutrient.protein
+      oldNutrient.water = newNutrient.water
+      oldNutrient.fiber = newNutrient.fiber
+      let allNutrients = [...currentNutrients]
+      allNutrients.map(e => {
+        if (e.foodId == oldNutrient.foodId) {
+          e = oldNutrient
+        }
+        setCurrentNutrients(allNutrients)
+      })
+    }
+  }
+
+  const updateNutrients = (nutrientType: string) => {
+
+    currentNutrients.forEach(async (e) => {
+      switch (nutrientType) {
+        case "Starch": addEnergyNutrientGroup(e)
+          break;
+        case "Lactose": addEnergyNutrientGroup(e)
+          break;
+        case "Calories": addEnergyNutrientGroup(e)
+          break;
+        case "Sugars": addEnergyNutrientGroup(e)
+          break;
+        case "Carbohydrate": addEnergyNutrientGroup(e)
+          break;
+        case "Protein": addUngroupedNutrientGroup(e)
+          break;
+        case "Water": addUngroupedNutrientGroup(e)
+          break;
+        case "Fiber": addUngroupedNutrientGroup(e)
+          break;
+        case "VitaminC": addVitaminGroup(e)
+          break;
+        case "VitaminA": addVitaminGroup(e)
+          break;
+        case "VitaminB6": addVitaminGroup(e)
+          break;
+        case "Iron": addMineralGroup(e)
+          break;
+        case "Magnesium": addMineralGroup(e)
+          break;
+        case "Calcium": addMineralGroup(e)
+          break;
+        case "Potassium": addMineralGroup(e)
+          break;
+        case "Zinc": addMineralGroup(e)
+          break;
+
+        default: console.log("error");
+      }
+    })
+  }
+
+  //error source
   const updateFoodAndNutrient = (foodAndNutrient: FoodAndNutrient, nutrientType: string) => {
 
     const nutrient: Nutrient = currentNutrients.filter(x => x.foodId == foodAndNutrient.foodId)[0]
+    const localFoodAndNutrient : FoodAndNutrient = foodAndNutrient
 
-    foodAndNutrientSetNutrient(nutrientType, foodAndNutrient, nutrient)
+    foodAndNutrientSetNutrient(nutrientType, localFoodAndNutrient, nutrient)
+    
+    const newFoodAndNutrients: FoodAndNutrient[] = foodAndNutrients.map(x => {
+      if (x.foodId == localFoodAndNutrient.foodId) {
+        return localFoodAndNutrient
+      }
+      else{
+        return x
+      }
+      
+    })
 
-    if (foodAndNutrient.nutrient == null) {
+    console.log(newFoodAndNutrients)
 
-    }
-
+    setFoodAndNutrients(newFoodAndNutrients)
   }
 
+  useEffect(() => {
+    updateNutrients(nutrientType)
+    foodAndNutrients.forEach((faN) => {
+      updateFoodAndNutrient(faN, nutrientType)
+    })
+  }, [nutrientType])
+
   const typeBasedNutrientFetch = async (nutrientType: string, foodId: number | null) => {
-    if(foodId == null)
-    {
-     return null
+    if (foodId == null) {
+      return null
     }
     else if (nutrientType == "Calories" || nutrientType == "Starch" || nutrientType == "Lactose" || nutrientType == "Sugars" || nutrientType == "Carbohydrate") {
       return await getEnergyNutrientByFoodId(foodId)
@@ -113,16 +269,15 @@ export default function CurrentIngredient({ currentFoods, nutrientType, newFoodI
 
   useEffect(() => {
     if (currentFoods.length > 0) {
-      const fetchNutrient = async (id: number | null, nutrientType : string) => {
+      const fetchNutrient = async (id: number | null, nutrientType: string) => {
 
-        const foundNutrient: Nutrient | null = await typeBasedNutrientFetch(nutrientType,id)
+        const foundNutrient: Nutrient | null = await typeBasedNutrientFetch(nutrientType, id)
 
-        if(foundNutrient !== null)
-        {
+        if (foundNutrient !== null) {
           setCurrentNutrients([...currentNutrients, foundNutrient])
         }
       }
-      fetchNutrient(newFoodId,nutrientType)
+      fetchNutrient(newFoodId, nutrientType)
     }
 
   }, [currentFoods])
