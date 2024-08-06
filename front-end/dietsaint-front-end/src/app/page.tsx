@@ -7,10 +7,12 @@ import { Food } from "./interfaces/ifood";
 import NutrientTotal from "./components/nutrient_total/nutrientTotal";
 import SearchFood from "./components/search_food/searchFood";
 import CurrentIngredient from "./components/current_ingredient/currentIngredient";
+import { FoodAndNutrient } from "./interfaces/ifoodandnutrient";
 
 export default function Home() {
 
   const [currentFoods, setCurrentFoods] = useState<Food[]>([])
+  const [foodAndNutrients,setFoodAndNutrients] = useState<FoodAndNutrient[]>([])
   const [nutrientType, setNutrientType] = useState<string>("Calories")
   const [currentTotal,setCurrentTotal] = useState<number>(0)
   const [newFoodId, setNewFoodId] = useState<number | null>(null)
@@ -26,10 +28,10 @@ export default function Home() {
       <div className={styles.ad_space}></div>
       <div className={styles.page_content}>
         <div className={styles.card}>
-            <NutrientTotal currentTotal={currentTotal} setNutrientType={setNutrientType} nutrientType={nutrientType}/>
+            <NutrientTotal  foodAndNutrients={foodAndNutrients} setNutrientType={setNutrientType} nutrientType={nutrientType}/>
         </div>
         <div className={styles.card}>
-            <CurrentIngredient nutrientType={nutrientType} currentFoods={currentFoods}  newFoodId={newFoodId} setCurrentTotal={setCurrentTotal}/>
+            <CurrentIngredient nutrientType={nutrientType} currentFoods={currentFoods}  newFoodId={newFoodId} setFoodAndNutrients={setFoodAndNutrients} foodAndNutrients={foodAndNutrients}/>
         </div>
         <div className={styles.card}>
             <SearchFood addFood={addFood}/>

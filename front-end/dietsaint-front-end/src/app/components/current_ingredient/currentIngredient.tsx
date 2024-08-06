@@ -17,11 +17,9 @@ import { useEffect } from "react"
 //a user can change nutrient type to one in a new group
 //requires all the nutrients to be fetched again for the new type
 
-export default function CurrentIngredient({ currentFoods, nutrientType, newFoodId, setCurrentTotal }: { currentFoods: Food[], nutrientType: string, newFoodId: number | null, setCurrentTotal : Function }) {
+export default function CurrentIngredient({ currentFoods, nutrientType, newFoodId, setFoodAndNutrients, foodAndNutrients }: { currentFoods: Food[], nutrientType: string, newFoodId: number | null, setFoodAndNutrients: Function, foodAndNutrients : FoodAndNutrient[] }) {
 
   const [currentNutrients, setCurrentNutrients] = useState<Nutrient[]>([])
-
-  const [foodAndNutrients, setFoodAndNutrients] = useState<FoodAndNutrient[]>([])
 
   //const [nutrientTotals, setNutrientTotals] = useState(0)
 
@@ -32,7 +30,7 @@ export default function CurrentIngredient({ currentFoods, nutrientType, newFoodI
 
   //changing the nutrient type only causes data for the last nutrient to be shown in the current ingredients list
   //changing the nutrient causes a food(s?) to be added to the current ingredients list without clicking on it
-  
+
   //these errors are related as instead of an update to the current foods a new one is added with the new nutrient type
 
   //error is in foodAndNutrients update  and not nutrients update as the nutrient correctly has one item with all the details
@@ -49,21 +47,20 @@ export default function CurrentIngredient({ currentFoods, nutrientType, newFoodI
   //only the new foods should have their nutrient data fetched for that group since it already exists for 
   //the others  
 
-  const nutrientTotalsCalculator = () => {
-    let nutrientTotal = 0
-    foodAndNutrients.forEach((f) => {
-    if(f.nutrient !== null) 
-      {
-        let nutrientAmount : number = Number(f.nutrient.split(" ")[0])
-         nutrientTotal+= nutrientAmount
-      } 
-    })
-    setCurrentTotal(nutrientTotal)
-  }
+  // const nutrientTotalsCalculator = () => {
+  //   let nutrientTotal = 0
+  //   foodAndNutrients.forEach((f) => {
+  //     if (f.nutrient !== null) {
+  //       let nutrientAmount: number = Number(f.nutrient.split(" ")[0])
+  //       nutrientTotal += nutrientAmount
+  //     }
+  //   })
+  //   setCurrentTotal(nutrientTotal)
+  // }
 
   useEffect(() => {
-  nutrientTotalsCalculator()
-  },[foodAndNutrients])
+    //nutrientTotalsCalculator()
+  }, [foodAndNutrients])
 
   const addEnergyNutrientGroup = async (e: Nutrient) => {
     if (e.calories == null) {
@@ -180,22 +177,55 @@ export default function CurrentIngredient({ currentFoods, nutrientType, newFoodI
     })
   }
 
-  const updateFoodAndNutrient = (foodAndNutrient: FoodAndNutrient, nutrientType: string) => {
+  const updateFoodAndNutrientUnit = (id: number, unit: string) => {
+
+    let foodAndNutrient: FoodAndNutrient = foodAndNutrients.filter(x => x.id == id)[0]
+    foodAndNutrient.unit = unit
+
+    const newFoodAndNutrients = foodAndNutrients.map(fn => {
+      if (fn.id == id) {
+        fn = foodAndNutrient
+      }
+      return fn
+    })
+
+    setFoodAndNutrients([...newFoodAndNutrients])
+
+  }
+
+  const updateFoodAndNutrientQuantity = (id : number, quantity: number) => {
+    
+    const foodAndNutrient : FoodAndNutrient = foodAndNutrients.filter(e => e.id == id)[0]
+
+    foodAndNutrient.quantity = quantity
+
+    const newFoodAndNutrients = foodAndNutrients.map((e) => {
+     if(e.id == id)
+     {
+      e = foodAndNutrient 
+     }
+     return e
+    })
+
+    setFoodAndNutrients([...newFoodAndNutrients])
+  }
+
+  const updateFoodAndNutrientType = (foodAndNutrient: FoodAndNutrient, nutrientType: string) => {
 
     const nutrient: Nutrient = currentNutrients.filter(x => x.foodId == foodAndNutrient.foodId)[0]
-    const localFoodAndNutrient : FoodAndNutrient = foodAndNutrient
+    const localFoodAndNutrient: FoodAndNutrient = foodAndNutrient
 
     foodAndNutrientSetNutrient(nutrientType, localFoodAndNutrient, nutrient)
-    
+
     const newFoodAndNutrients: FoodAndNutrient[] = foodAndNutrients.map(x => {
       if (x.foodId == localFoodAndNutrient.foodId) {
         x = localFoodAndNutrient
         return x
       }
-      else{
+      else {
         return x
       }
-      
+
     })
 
     console.log(newFoodAndNutrients)
@@ -208,9 +238,10 @@ export default function CurrentIngredient({ currentFoods, nutrientType, newFoodI
   useEffect(() => {
     updateNutrients(nutrientType)
     foodAndNutrients.forEach((faN) => {
-      updateFoodAndNutrient(faN, nutrientType)
+      updateFoodAndNutrientType(faN, nutrientType)
     })
   }, [nutrientType])
+
 
   const typeBasedNutrientFetch = async (nutrientType: string, foodId: number | null) => {
     if (foodId == null) {
@@ -276,9 +307,12 @@ export default function CurrentIngredient({ currentFoods, nutrientType, newFoodI
   const createFoodAndNutrient = (food: Food, nutrient: Nutrient, nutrientType: string) => {
 
     let foodAndNutrient: FoodAndNutrient = {
+      id: foodAndNutrients.length,
       foodId: food.id,
       name: food.name,
-      nutrient: ""
+      nutrient: "",
+      quantity: 100,
+      unit: "g"
     }
 
     foodAndNutrientSetNutrient(nutrientType, foodAndNutrient, nutrient)
@@ -319,6 +353,11 @@ export default function CurrentIngredient({ currentFoods, nutrientType, newFoodI
             return <div className={styles.single_ingredient}>
               <div className={styles.single_ingredient_name}>{e.name}</div>
               <div className={styles.single_ingredient_nutrient}>{e.nutrient}</div>
+              <input type="number" placeholder="100" onChange={(x) => {updateFoodAndNutrientQuantity(e.id,Number(x.target.value))}}></input>
+              <select onChange={x => updateFoodAndNutrientUnit(e.id,x.target.value)}>
+                <option value={"g"}>Grams</option>
+                <option value={"kg"}>Kilograms</option>
+              </select>
             </div>
           })
         }
