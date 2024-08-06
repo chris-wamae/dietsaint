@@ -31,7 +31,9 @@ return <>
 Search Ingredient
 <div className={styles.add_ingredient_card}>
           <div className="large_font">Add Ingredient</div>
-          <form className={styles.search_form}>
+          <form className={styles.search_form} onSubmit={(e) => e.preventDefault()
+            
+          }>
             <input type="text" placeholder="Enter ingredient name" onChange={(e) => {
               setSearchQuery(e.target.value)
             }}></input>
@@ -42,7 +44,8 @@ Search Ingredient
           <div className={styles.found_ingredients_cont}>
             {
             foundFoods.map(e => {
-             return  <div onClick={() => addFood(e)}>{e.name}</div>
+             return  <div onClick={(x) => {
+              addFood(e)}}>{e.name}</div>
             })
             }
           </div>

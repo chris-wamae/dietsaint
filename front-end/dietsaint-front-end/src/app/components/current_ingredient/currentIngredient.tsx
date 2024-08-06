@@ -17,14 +17,16 @@ import { useEffect } from "react"
 //a user can change nutrient type to one in a new group
 //requires all the nutrients to be fetched again for the new type
 
-export default function CurrentIngredient({ currentFoods, nutrientType, newFoodId }: { currentFoods: Food[], nutrientType: string, newFoodId: number | null }) {
+export default function CurrentIngredient({ currentFoods, nutrientType, newFoodId, setCurrentTotal }: { currentFoods: Food[], nutrientType: string, newFoodId: number | null, setCurrentTotal : Function }) {
 
   const [currentNutrients, setCurrentNutrients] = useState<Nutrient[]>([])
 
   const [foodAndNutrients, setFoodAndNutrients] = useState<FoodAndNutrient[]>([])
 
+  //const [nutrientTotals, setNutrientTotals] = useState(0)
 
-  console.log(currentNutrients)
+
+  //console.log(currentNutrients)
 
   //errors
 
@@ -46,6 +48,23 @@ export default function CurrentIngredient({ currentFoods, nutrientType, newFoodI
   //if a new foods are added and the nutrient group is then changed back to what it previosly was
   //only the new foods should have their nutrient data fetched for that group since it already exists for 
   //the others  
+
+  const nutrientTotalsCalculator = () => {
+    let nutrientTotal = 0
+    foodAndNutrients.forEach((f) => {
+    if(f.nutrient !== null) 
+      {
+        let nutrientAmount : number = Number(f.nutrient.split(" ")[0])
+         nutrientTotal+= nutrientAmount
+      } 
+    })
+    setCurrentTotal(nutrientTotal)
+  }
+
+  useEffect(() => {
+  nutrientTotalsCalculator()
+  },[foodAndNutrients])
+
   const addEnergyNutrientGroup = async (e: Nutrient) => {
     if (e.calories == null) {
       let newNutrient = await getEnergyNutrientByFoodId(e.foodId)
@@ -161,7 +180,6 @@ export default function CurrentIngredient({ currentFoods, nutrientType, newFoodI
     })
   }
 
-  //error source
   const updateFoodAndNutrient = (foodAndNutrient: FoodAndNutrient, nutrientType: string) => {
 
     const nutrient: Nutrient = currentNutrients.filter(x => x.foodId == foodAndNutrient.foodId)[0]
@@ -171,7 +189,8 @@ export default function CurrentIngredient({ currentFoods, nutrientType, newFoodI
     
     const newFoodAndNutrients: FoodAndNutrient[] = foodAndNutrients.map(x => {
       if (x.foodId == localFoodAndNutrient.foodId) {
-        return localFoodAndNutrient
+        x = localFoodAndNutrient
+        return x
       }
       else{
         return x
@@ -181,8 +200,10 @@ export default function CurrentIngredient({ currentFoods, nutrientType, newFoodI
 
     console.log(newFoodAndNutrients)
 
-    setFoodAndNutrients(newFoodAndNutrients)
+    setFoodAndNutrients([...newFoodAndNutrients])
   }
+
+  console.log(foodAndNutrients)
 
   useEffect(() => {
     updateNutrients(nutrientType)
@@ -286,7 +307,7 @@ export default function CurrentIngredient({ currentFoods, nutrientType, newFoodI
     if (currentNutrients.length > 0) {
       createFoodAndNutrient(currentFoods[currentFoods.length - 1], currentNutrients[currentNutrients.length - 1], nutrientType)
     }
-  }, [currentNutrients])
+  }, [currentNutrients.length])
 
   return <>
     Current Ingredient

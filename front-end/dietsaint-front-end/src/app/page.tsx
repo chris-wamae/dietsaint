@@ -29,7 +29,7 @@ export default function Home() {
             <NutrientTotal currentTotal={currentTotal} setNutrientType={setNutrientType} nutrientType={nutrientType}/>
         </div>
         <div className={styles.card}>
-            <CurrentIngredient nutrientType={nutrientType} currentFoods={currentFoods}  newFoodId={newFoodId}/>
+            <CurrentIngredient nutrientType={nutrientType} currentFoods={currentFoods}  newFoodId={newFoodId} setCurrentTotal={setCurrentTotal}/>
         </div>
         <div className={styles.card}>
             <SearchFood addFood={addFood}/>
