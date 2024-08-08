@@ -305,6 +305,14 @@ export default function CurrentIngredient({ currentFoods, nutrientType, newFoodI
     }
   }
 
+  // const removeFoodAndNutrient = (foodAndNutrientId : number, foodId : number) => {
+  //  let newFoodAndNutrients = foodAndNutrients.filter((x) => {return x.id !== foodAndNutrientId})
+  //  setFoodAndNutrients([...newFoodAndNutrients])
+  //  let newNutrients = currentNutrients.filter(x => x.foodId == foodId)
+  //  setCurrentNutrients([...newNutrients])
+  // }
+
+
   const createFoodAndNutrient = (food: Food, nutrient: Nutrient, nutrientType: string) => {
 
     let foodAndNutrient: FoodAndNutrient = {
@@ -333,7 +341,18 @@ export default function CurrentIngredient({ currentFoods, nutrientType, newFoodI
           setCurrentNutrients([...currentNutrients, foundNutrient])
         }
       }
-      fetchNutrient(newFoodId, nutrientType)
+      
+      let nutrientExists = false;
+      
+      currentNutrients.forEach((n) => {
+      if(n.foodId == newFoodId){nutrientExists = true}
+      })
+
+      if(!nutrientExists)
+      {
+        fetchNutrient(newFoodId, nutrientType)
+      }
+      
     }
 
   }, [currentFoods])
@@ -359,6 +378,7 @@ export default function CurrentIngredient({ currentFoods, nutrientType, newFoodI
                 <option value={"g"}>Grams</option>
                 <option value={"kg"}>Kilograms</option>
               </select>
+              {/* <button onClick={() => {removeFoodAndNutrient(e.id,e.foodId)}}>X</button> */}
             </div>
           })
         }

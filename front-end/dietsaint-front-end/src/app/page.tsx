@@ -31,11 +31,12 @@ export default function Home() {
             <NutrientTotal  foodAndNutrients={foodAndNutrients} setNutrientType={setNutrientType} nutrientType={nutrientType}/>
         </div>
         <div className={styles.card}>
-            <CurrentIngredient nutrientType={nutrientType} currentFoods={currentFoods}  newFoodId={newFoodId} setFoodAndNutrients={setFoodAndNutrients} foodAndNutrients={foodAndNutrients}/>
-        </div>
-        <div className={styles.card}>
             <SearchFood addFood={addFood}/>
         </div>
+        <div className={styles.card}>
+            <CurrentIngredient nutrientType={nutrientType} currentFoods={currentFoods}  newFoodId={newFoodId} setFoodAndNutrients={setFoodAndNutrients} foodAndNutrients={foodAndNutrients}/>
+        </div>
+     
       </div>
       <div className={styles.ad_space}></div>
     </main>
