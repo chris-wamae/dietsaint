@@ -7,11 +7,17 @@ export default function NutrientTotal({setNutrientType, nutrientType, foodAndNut
 const [nutrientTotals,setNutrientTotals] = useState<number>(0)
 
 const calculateNutrientTotals = () => {
+
 let grandTotal = 0
-foodAndNutrients.forEach((e) => {
+
+foodAndNutrients.forEach((e) =>{
+
 let singleTotal = Number(e.nutrient?.split(" ")[0]) * nutrientUnitsConverter(e.unit) * e.quantity/100
+
 grandTotal += singleTotal
+
 })
+
 setNutrientTotals(grandTotal)
 }
 

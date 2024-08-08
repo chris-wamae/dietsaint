@@ -210,6 +210,7 @@ export default function CurrentIngredient({ currentFoods, nutrientType, newFoodI
     setFoodAndNutrients([...newFoodAndNutrients])
   }
 
+  console.log(currentNutrients)
   const updateFoodAndNutrientType = (foodAndNutrient: FoodAndNutrient, nutrientType: string) => {
 
     const nutrient: Nutrient = currentNutrients.filter(x => x.foodId == foodAndNutrient.foodId)[0]
@@ -219,7 +220,7 @@ export default function CurrentIngredient({ currentFoods, nutrientType, newFoodI
 
     const newFoodAndNutrients: FoodAndNutrient[] = foodAndNutrients.map(x => {
       if (x.foodId == localFoodAndNutrient.foodId) {
-        x = localFoodAndNutrient
+        x.nutrient = localFoodAndNutrient.nutrient
         return x
       }
       else {
