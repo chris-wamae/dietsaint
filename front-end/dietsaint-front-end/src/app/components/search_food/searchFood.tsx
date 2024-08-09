@@ -28,28 +28,35 @@ export default function SearchIngredient({ addFood }: { addFood: Function }) {
   return <>
     Search Ingredient
     <div className={styles.add_ingredient_card}>
-      <div className="large_font">Add Ingredient</div>
+      <div className="medium_font">Add Ingredient</div>
       <form className={styles.search_form} onSubmit={(e) => e.preventDefault()
 
       }>
-        <input ref={searchRef} type="text" placeholder="Enter ingredient name" onChange={(e) => {
+        <input className={styles.search_input} ref={searchRef} type="text" placeholder="Enter ingredient name" onChange={(e) => {
           setSearchQuery(e.target.value)
         }}></input>
         {/* <button onClick={(e) =>{
             e.preventDefault()
             }}>Search</button> */}
       </form>
-      <div className={styles.found_ingredients_cont}>
+      <div className={styles.search_results_cont}>
         {
           foundFoods.map(e => {
-            return <div onClick={(x) => {
-              addFood(e)
-              setFoundFoods([])
-              if (searchRef !== null) {
-                searchRef.current.value = ""
-              }
+            return <div className={styles.search_result}>
+              <div className={styles.search_result_name}>{e.name}</div>
+              <span className="clickable_element">
+              <div 
+                 className={styles.add_search_result}
+                 onClick={(x) => {
+                addFood(e)
+                setFoundFoods([])
+                if (searchRef !== null) {
+                  searchRef.current.value = ""
+                }
+              }}>+</div>
+              </span>
+            </div>
 
-            }}>{e.name}</div>
           })
         }
       </div>

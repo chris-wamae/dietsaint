@@ -2,12 +2,14 @@
 {
 --alloyOrange:#BF5D03;
 --limeGreen:#10C400;
+--vanilla:#EBEBB3;
 }
 
 body
 {
 margin:0px;
 padding:0px;
+background-color:var(--vanilla);
 }
 
 a
@@ -46,6 +48,12 @@ width:150px;
 height:30px;
 font-size:20px;
 
+}
+
+
+span.clickable_element:hover
+{
+cursor:pointer;
 }
 
 

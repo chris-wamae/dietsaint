@@ -367,6 +367,10 @@ export default function CurrentIngredient({ currentFoods, nutrientType, newFoodI
     Current Ingredient
     <div className={styles.current_ingredients_card}>
       <div className="large_font">Current Ingredients</div>
+      {
+      foodAndNutrients.length == 0 ? <div>Added ingredients will be shown here, please add some using the search bar above</div> : <span></span>
+      }
+      
       <div className={styles.current_ingredients_container}>
         {
           foodAndNutrients.map(e => {
