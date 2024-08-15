@@ -26,7 +26,6 @@ export default function SearchIngredient({ addFood }: { addFood: Function }) {
   }, [searchQuery])
 
   return <>
-    Search Ingredient
     <div className={styles.add_ingredient_card}>
       <div className="medium_font">Add Ingredient</div>
       <form className={styles.search_form} onSubmit={(e) => e.preventDefault()

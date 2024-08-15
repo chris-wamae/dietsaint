@@ -57,5 +57,15 @@ cursor:pointer;
 }
 
 
+@media only screen and (max-width:911px)
+{
+
+.medium_font
+{
+font-size:28px;
+}
+
+}
+
 
 

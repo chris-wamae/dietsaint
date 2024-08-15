@@ -23,12 +23,12 @@ color:var(--alloyOrange);
 .app_description
 {
 font-size:16px;
-color:var(--limeGreen);
+color:var(--limeGreen)
 }
 
 .nav_branding
 {
-width:30%;
+min-width:40%;
 text-align:center;
 padding:0px;
 }
@@ -53,3 +53,24 @@ justify-content:center;
 align-items:center;
 }
 
+@media only screen and (max-width:678px)
+{
+
+.nav_branding
+{
+width:90%;
+}
+
+
+.links_div
+{
+width:40px;
+}
+
+span.app_description
+{
+font-size:14px;
+}
+
+
+}

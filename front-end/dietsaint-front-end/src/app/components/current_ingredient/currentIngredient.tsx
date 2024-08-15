@@ -17,7 +17,7 @@ import { useEffect } from "react"
 //a user can change nutrient type to one in a new group
 //requires all the nutrients to be fetched again for the new type
 
-export default function CurrentIngredient({ currentFoods, nutrientType, newFoodId, setFoodAndNutrients, foodAndNutrients }: { currentFoods: Food[], nutrientType: string, newFoodId: number | null, setFoodAndNutrients: Function, foodAndNutrients : FoodAndNutrient[] }) {
+export default function CurrentIngredient({ currentFoods, nutrientType, newFoodId, setFoodAndNutrients, foodAndNutrients }: { currentFoods: Food[], nutrientType: string, newFoodId: number | null, setFoodAndNutrients: Function, foodAndNutrients: FoodAndNutrient[] }) {
 
   const [currentNutrients, setCurrentNutrients] = useState<Nutrient[]>([])
 
@@ -193,18 +193,17 @@ export default function CurrentIngredient({ currentFoods, nutrientType, newFoodI
 
   }
 
-  const updateFoodAndNutrientQuantity = (id : number, quantity: number) => {
-    
-    const foodAndNutrient : FoodAndNutrient = foodAndNutrients.filter(e => e.id == id)[0]
+  const updateFoodAndNutrientQuantity = (id: number, quantity: number) => {
+
+    const foodAndNutrient: FoodAndNutrient = foodAndNutrients.filter(e => e.id == id)[0]
 
     foodAndNutrient.quantity = quantity
 
     const newFoodAndNutrients = foodAndNutrients.map((e) => {
-     if(e.id == id)
-     {
-      e = foodAndNutrient 
-     }
-     return e
+      if (e.id == id) {
+        e = foodAndNutrient
+      }
+      return e
     })
 
     setFoodAndNutrients([...newFoodAndNutrients])
@@ -305,11 +304,11 @@ export default function CurrentIngredient({ currentFoods, nutrientType, newFoodI
     }
   }
 
-  const removeFoodAndNutrient = (foodAndNutrientId : number, foodId : number) => {
-   let newFoodAndNutrients = foodAndNutrients.filter((x) => {return x.id !== foodAndNutrientId})
-   setFoodAndNutrients([...newFoodAndNutrients])
-   let newNutrients = currentNutrients.filter(x => x.foodId == foodId)
-   setCurrentNutrients([...newNutrients])
+  const removeFoodAndNutrient = (foodAndNutrientId: number, foodId: number) => {
+    let newFoodAndNutrients = foodAndNutrients.filter((x) => { return x.id !== foodAndNutrientId })
+    setFoodAndNutrients([...newFoodAndNutrients])
+    let newNutrients = currentNutrients.filter(x => x.foodId !== foodId)
+    setCurrentNutrients([...newNutrients])
   }
 
 
@@ -341,21 +340,22 @@ export default function CurrentIngredient({ currentFoods, nutrientType, newFoodI
           setCurrentNutrients([...currentNutrients, foundNutrient])
         }
       }
-      
+
       let nutrientExists = false;
-      
+
       currentNutrients.forEach((n) => {
-      if(n.foodId == newFoodId){nutrientExists = true}
+        if (n.foodId == newFoodId ) { nutrientExists = true }
       })
 
-      if(!nutrientExists)
-      {
+      if (!nutrientExists) {
         fetchNutrient(newFoodId, nutrientType)
       }
-      
+
     }
 
   }, [currentFoods])
+
+  console.log(currentNutrients)
 
   useEffect(() => {
     if (currentNutrients.length > 0) {
@@ -364,25 +364,31 @@ export default function CurrentIngredient({ currentFoods, nutrientType, newFoodI
   }, [currentNutrients.length])
 
   return <>
-    Current Ingredient
     <div className={styles.current_ingredients_card}>
-      <div className="large_font">Current Ingredients</div>
+      <div className="medium_font">Current Ingredients</div>
       {
-      foodAndNutrients.length == 0 ? <div>Added ingredients will be shown here, please add some using the search bar above</div> : <span></span>
+        foodAndNutrients.length == 0 ? <div>Added ingredients will be shown here, please add some using the search bar above</div> : <span></span>
       }
-      
+
       <div className={styles.current_ingredients_container}>
         {
           foodAndNutrients.map(e => {
-            return <div className={styles.single_ingredient}>
-              <div className={styles.single_ingredient_name}>{e.name}</div>
-              <div className={styles.single_ingredient_nutrient}>{e.nutrient}</div>
-              <input type="number" placeholder="100" onChange={(x) => {updateFoodAndNutrientQuantity(e.id,Number(x.target.value))}}></input>
-              <select onChange={x => updateFoodAndNutrientUnit(e.id,x.target.value)}>
-                <option value={"g"}>Grams</option>
-                <option value={"kg"}>Kilograms</option>
-              </select>
-              <button onClick={() => {removeFoodAndNutrient(e.id,e.foodId)}}>X</button>
+            return <div>
+              <hr className={styles.single_ingredient_hr}></hr>
+              <div className={styles.single_ingredient}>
+                <button onClick={() => { removeFoodAndNutrient(e.id, e.foodId) }}>&#10005;</button>
+                <div className={styles.single_ingredient_name}>{e.name}</div>
+                <div className={styles.single_ingredient_nutrient}>{e.nutrient}</div>
+                <div className={styles.change_nutrient_measurements}>
+                <input type="number" placeholder="100" onChange={(x) => { updateFoodAndNutrientQuantity(e.id, Number(x.target.value)) }}></input>
+                <select onChange={x => updateFoodAndNutrientUnit(e.id, x.target.value)}>
+                  <option value={"g"}>Grams</option>
+                  <option value={"kg"}>Kilograms</option>
+                </select>
+                </div>
+
+
+              </div>
             </div>
           })
         }

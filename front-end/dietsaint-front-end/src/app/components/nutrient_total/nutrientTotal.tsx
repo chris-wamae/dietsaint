@@ -35,7 +35,6 @@ export default function NutrientTotal({ setNutrientType, nutrientType, foodAndNu
   }
 
   return <>
-    Nutrient Total
     <div className={styles.nutrient_total_card}>
       <div className={styles.nutrient_total_info}>
         <div className="medium_font">Total {nutrientType} Amount</div>
@@ -43,7 +42,7 @@ export default function NutrientTotal({ setNutrientType, nutrientType, foodAndNu
       </div>
       <div className={styles.change_nutrient_dropdown}>
         <select className={styles.select_nutrient_type}onChange={e => setNutrientType(e.target.value)}>
-          <option value={"Calories"}>Change Nutrient Type</option>
+          <option value={"Calories"}>Nutrient Type</option>
           <option value={"Calories"}>Calories</option>
           <option value={"Starch"}>Starch</option>
           <option value={"Lactose"}>Lactose</option>

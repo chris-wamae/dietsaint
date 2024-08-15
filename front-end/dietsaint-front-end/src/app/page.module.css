@@ -3,15 +3,21 @@
 display:flex;
 }
 
+
+.nutrient_total_info div
+{
+min-width:200px;
+}
+
 .ad_space
 {
-width:15%;
-/* background-color:red; */
+width:250px;
+background-color:red;
 }
 
 .page_content
 {
-width:70%;
+width:65%;
 /* background-color:blue; */
 }
 
@@ -29,7 +35,7 @@ border-radius:5px;
 text-align:center;
 display:flex;
 flex-direction:row;
-justify-content:space-around;
+justify-content:center;
 }
 
 .current_ingredients_card
@@ -128,3 +134,140 @@ border-radius:5px;
 {
 background-color:white;
 }
+
+.single_ingredient
+{
+display:flex;
+align-items:center;
+justify-content:space-between;
+font-size:18px;
+min-width:40%;
+margin:10px;
+padding:10px;
+}
+
+.single_ingredient input{
+width:100px;
+border-radius:5px;
+border:1px solid black;
+width:40px;
+height:20px;
+
+
+}
+
+.single_ingredient select
+{
+background-color: var(--vanilla);
+border-radius:5px;
+height:20px;
+}
+
+.single_ingredient button
+{
+    font-size:16px;
+    text-align:center;
+    padding:0px;
+    width:24px;
+    height:24px;
+    line-height:22px;
+    background-color:red;
+    font-weight:bold;
+    color:white;
+    border-radius:50%;
+    text-align:center;
+    border:0px;
+}
+
+.single_ingredient button:hover
+{
+  background-color:white;
+  color:red;
+  border:1px solid black;
+}
+
+
+hr.single_ingredient_hr{
+background-color:var(--alloyOrange);
+height:1px;
+border:0px;
+}
+
+
+.change_nutrient_measurements
+{
+display:flex;
+min-width:170px;
+justify-content:space-around;
+}
+
+
+@media only  screen and (max-width:1000px)
+{
+  .nutrient_total_card
+  {
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  }
+
+  .nutrient_total_info
+  {
+  margin-left:0px;
+  }
+}
+
+@media only screen and (max-width:800px)
+{
+  .page_container
+  {
+  flex-direction:column;
+  align-items:center;
+  }
+
+  .ad_space
+  {
+  width:80%;
+  height:300px;
+  }
+  .page_content
+  {
+  width:80%;
+  }
+}
+
+@media only screen and (max-width:560px)
+{
+.single_ingredient
+{
+flex-direction:column;
+border:2px solid black;
+border-radius:10px;
+}
+}
+
+@media only screen and (max-width:475px)
+{
+  .search_input::placeholder
+  {
+  font-size:12px;
+  }
+}
+
+
+/* @media only screen and (max-width:730px)
+{
+
+.nutrient_total_info
+{
+margin-left:0px;
+}
+
+.nutrient_total_card
+{
+flex-direction:column;
+justify-content:center;
+align-items:center;
+}
+
+} */
