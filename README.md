@@ -10,7 +10,7 @@ The application uses data from the json file created by the [json-filter console
 
 ## App Technologies and Frameworks
 
-The application was developed using NextJS for the front end and .NET(ASP .NET Web API) for the backend, connected to a database through MSSMS.
+The application was developed using **Next.Js** for the front end and **.NET(ASP .NET Web API)** for the backend, connected to a database through MSSMS.
 
 ## Testing the application on your computer
 
