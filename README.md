@@ -80,6 +80,15 @@ Startup a new terminal window and navigate into the project again. This time, na
 
 **dotnet run**
 
+## Application Status
+
+This application is currently not being updated, but this might change in the future 
+
+## Author and License
+
+- Author: [Christopher Wamae](https://github.com/chris-wamae)
+- License: This application is covered under the MIT License
+
 
 
 
